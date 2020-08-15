@@ -1,8 +1,18 @@
-<h2>{{hero.name | uppercase}} Details</h2>
-<h2>{{hero.id }} </h2>
-<div><span>id: </span>{{hero.id}}</div>
+<!-- example of built-in pipes -->
+<h2>{{ heroObject.name | uppercase }} Details</h2>
+
+<!-- useful to update/delete via object id -->
+<h2>{{heroObject.id }} </h2>
+
+<!-- adding additional attributes to the object -->
+<h2>{{ heroObject.other }} </h2>
+<div><span>id: </span>{{heroObject.id}}</div>
 <div>
   <label>name:
-    <input [(ngModel)]="hero.name" placeholder="name"/>
+    <input [(ngModel)]="heroObject.name" placeholder="name" />
+  </label>
+  <br>
+  <label>other skills: 
+    <input [(ngModel)]="heroObject.other" placeholder="add other skills here" />
   </label>
 </div>
