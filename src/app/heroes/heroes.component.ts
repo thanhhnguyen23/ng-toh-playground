@@ -7,9 +7,10 @@ import { Hero } from '../hero';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-  hero: Hero = {
+  heroObject: Hero = {
     id: 1,
-    name: 'Windstorm'
+    name: 'Windstorm',
+    other: 'these are my other skills'
   };
 
   constructor() { }
