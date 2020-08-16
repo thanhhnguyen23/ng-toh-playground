@@ -1,18 +1,20 @@
-<!-- example of built-in pipes -->
-<h2>{{ heroObject.name | uppercase }} Details</h2>
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
 
-<!-- useful to update/delete via object id -->
-<h2>{{heroObject.id }} </h2>
+<div *ngIf="selectedHero">
 
-<!-- adding additional attributes to the object -->
-<h2>{{ heroObject.other }} </h2>
-<div><span>id: </span>{{heroObject.id}}</div>
-<div>
-  <label>name:
-    <input [(ngModel)]="heroObject.name" placeholder="name" />
-  </label>
-  <br>
-  <label>other skills: 
-    <input [(ngModel)]="heroObject.other" placeholder="add other skills here" />
-  </label>
+  <h2>{{selectedHero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+    </label>
+  </div>
+
 </div>
